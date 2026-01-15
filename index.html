@@ -1,0 +1,1433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Mehul Mittal - AI/ML Engineer" />
+    <meta property="og:description" content="AI/ML Engineer specializing in deep learning, GenAI, and production ML systems. Building intelligent solutions from research to deployment." />
+    <meta property="og:image" content="https://yourwebsite.com/preview-image.png" />
+    <meta property="og:url" content="https://yourwebsite.com" />
+    <title>Mehul Mittal - AI/ML Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0A0A0A;
+            --secondary: #F5F5F5;
+            --accent: #FF3366;
+            --accent-soft: #FF6B9D;
+            --tech: #00D9FF;
+            --tech-soft: #4DE8FF;
+            --border: #2A2A2A;
+            --shadow: rgba(255, 51, 102, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--secondary);
+            color: var(--primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .bg-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.03;
+            pointer-events: none;
+            background-image: 
+                repeating-linear-gradient(0deg, transparent, transparent 2px, var(--primary) 2px, var(--primary) 4px),
+                repeating-linear-gradient(90deg, transparent, transparent 2px, var(--primary) 2px, var(--primary) 4px);
+            animation: patternMove 60s linear infinite;
+        }
+
+        @keyframes patternMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(245, 245, 245, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 3px solid var(--primary);
+            z-index: 1000;
+            animation: slideDown 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Space Mono', monospace;
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 500;
+            font-size: 0.95rem;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 100px;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text {
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s backwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--accent);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            font-weight: 900;
+            line-height: 0.95;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.03em;
+        }
+
+        h1 .gradient-text {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--tech) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            line-height: 1.7;
+            color: #444;
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--secondary);
+            border: 3px solid var(--primary);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px var(--shadow);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 3px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--border);
+        }
+
+        .stat {
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+        }
+
+        .stat:nth-child(1) { animation-delay: 0.5s; }
+        .stat:nth-child(2) { animation-delay: 0.6s; }
+
+        .stat-number {
+            font-family: 'Space Mono', monospace;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .hero-visual {
+            position: relative;
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s backwards;
+        }
+
+        .visual-card {
+            background: var(--primary);
+            color: var(--secondary);
+            padding: 3rem;
+            border: 3px solid var(--primary);
+            position: relative;
+            transform: rotate(-1deg);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .visual-card:hover {
+            transform: rotate(0deg);
+        }
+
+        .visual-card::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            right: -10px;
+            width: 100%;
+            height: 100%;
+            background: var(--accent);
+            z-index: -1;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .visual-card:hover::before {
+            top: 15px;
+            right: -15px;
+        }
+
+        .card-header {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            opacity: 0.7;
+        }
+
+        .card-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .tech-tag {
+            padding: 0.4rem 0.8rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.8rem;
+            font-family: 'Space Mono', monospace;
+        }
+
+        .tech-marquee {
+            background: var(--primary);
+            padding: 3rem 0;
+            border-top: 3px solid var(--accent);
+            border-bottom: 3px solid var(--accent);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .marquee-label {
+            text-align: center;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--accent);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        .marquee-container {
+            display: flex;
+            overflow: hidden;
+            user-select: none;
+            gap: 4rem;
+        }
+
+        .marquee-content {
+            flex-shrink: 0;
+            display: flex;
+            gap: 4rem;
+            align-items: center;
+            animation: scroll 40s linear infinite;
+            padding-right: 4rem;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .marquee-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            min-width: 120px;
+        }
+
+        .marquee-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--secondary);
+            border: 3px solid var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            padding: 1rem;
+        }
+
+        .marquee-icon:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px var(--shadow);
+        }
+
+        .marquee-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: grayscale(100%);
+            transition: filter 0.3s;
+        }
+
+        .marquee-icon:hover img {
+            filter: grayscale(0%);
+        }
+
+        .marquee-name {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        section {
+            padding: 8rem 0;
+            position: relative;
+        }
+
+        .section-header {
+            margin-bottom: 4rem;
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .section-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--accent);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        .experience-grid {
+            display: grid;
+            gap: 3rem;
+        }
+
+        .experience-item {
+            border-left: 4px solid var(--accent);
+            padding-left: 2rem;
+            transition: all 0.3s;
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+        }
+
+        .experience-item:nth-child(1) { animation-delay: 0.1s; }
+        .experience-item:nth-child(2) { animation-delay: 0.2s; }
+        .experience-item:nth-child(3) { animation-delay: 0.3s; }
+        .experience-item:nth-child(4) { animation-delay: 0.4s; }
+
+        .experience-item:hover {
+            border-left-color: var(--tech);
+            transform: translateX(10px);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+        }
+
+        .experience-title h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .company {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .experience-date {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            color: #666;
+            white-space: nowrap;
+        }
+
+        .experience-description {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .experience-description ul {
+            margin-top: 0.5rem;
+            padding-left: 1.5rem;
+        }
+
+        .experience-description li {
+            margin-bottom: 0.5rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 2rem;
+            border: 3px solid var(--primary);
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+        }
+
+        .skill-category:nth-child(1) { animation-delay: 0.1s; }
+        .skill-category:nth-child(2) { animation-delay: 0.2s; }
+        .skill-category:nth-child(3) { animation-delay: 0.3s; }
+        .skill-category:nth-child(4) { animation-delay: 0.4s; }
+
+        .skill-category::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            right: -8px;
+            width: 100%;
+            height: 100%;
+            background: var(--accent);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-category:hover::before {
+            opacity: 1;
+        }
+
+        .skill-category h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-icon {
+            width: 30px;
+            height: 30px;
+            background: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-item {
+            padding: 0.5rem 1rem;
+            background: var(--secondary);
+            border: 2px solid var(--border);
+            font-size: 0.9rem;
+            font-family: 'Space Mono', monospace;
+            transition: all 0.3s;
+        }
+
+        .skill-item:hover {
+            background: var(--primary);
+            color: var(--secondary);
+            border-color: var(--primary);
+            transform: scale(1.05);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+        }
+
+        .project-card {
+            background: white;
+            border: 3px solid var(--primary);
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+        }
+
+        .project-card:nth-child(1) { animation-delay: 0.1s; }
+        .project-card:nth-child(2) { animation-delay: 0.2s; }
+        .project-card:nth-child(3) { animation-delay: 0.3s; }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 15px 15px 0 var(--accent);
+        }
+
+        .project-header {
+            background: var(--primary);
+            color: var(--secondary);
+            padding: 1.5rem;
+        }
+
+        .project-header h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-meta {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+
+        .project-body {
+            padding: 2rem;
+        }
+
+        .project-description {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        #contact {
+            background: var(--primary);
+            color: var(--secondary);
+        }
+
+        .contact-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-content h2 {
+            color: var(--secondary);
+            margin-bottom: 2rem;
+        }
+
+        .contact-description {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            padding: 1.2rem 2.5rem;
+            background: var(--secondary);
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+            border: 3px solid var(--secondary);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            font-size: 1.1rem;
+        }
+
+        .contact-link:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: var(--secondary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 51, 102, 0.3);
+        }
+
+        footer {
+            background: var(--primary);
+            color: var(--secondary);
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 3px solid var(--accent);
+            position: relative;
+            z-index: 1; 
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 1024px) {
+            h1 { font-size: 4rem; }
+            h2 { font-size: 3rem; }
+            .hero-content { grid-template-columns: 1fr; gap: 3rem; }
+            .hero-stats { grid-template-columns: repeat(2, 1fr); }
+            .visual-card { transform: rotate(0); }
+            .marquee-icon { width: 60px; height: 60px; }
+            .marquee-item { min-width: 100px; }
+            #about-me div[style*="grid-template-columns"] { grid-template-columns: 1fr !important; gap: 2rem !important; }
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 1rem; }
+            .nav-links { gap: 1rem; }
+            h1 { font-size: 3rem; }
+            h2 { font-size: 2.5rem; }
+            .hero-stats { grid-template-columns: 1fr; gap: 1.5rem; }
+            .experience-header { flex-direction: column; }
+            .projects-grid { grid-template-columns: 1fr; }
+            .skills-grid { grid-template-columns: 1fr; }
+            .cta-buttons { flex-direction: column; }
+            .contact-links { flex-direction: column; align-items: center; }
+            section { padding: 5rem 0; }
+            .marquee-icon { width: 50px; height: 50px; }
+            .marquee-item { min-width: 80px; }
+            .marquee-name { font-size: 0.75rem; }
+            #about-me div[style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+            #about-me h3 { font-size: 1.3rem !important; }
+        }
+
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-pattern"></div>
+
+    <header>
+        <nav>
+            <div class="logo">MEHUL<span>.</span>MITTAL</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="about">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <div class="hero-label">AI/ML Engineer</div>
+                        <h1>Building <span class="gradient-text">Intelligent Systems</span> That Scale</h1>
+                        <p class="hero-description">
+                            I love building production machine learning systems. I work on the full ML lifecycle, from research to deployment, 
+                            using PyTorch, TensorFlow, and modern LLM frameworks. What drives me is taking state of the art ML research 
+                            and turning it into real products that people can use.
+                        </p>
+                        <div class="cta-buttons">
+                            <a href="#contact" class="btn btn-primary">Let's Talk</a>
+                            <a href="#projects" class="btn btn-secondary">See My Work</a>
+                            <a href="https://github.com/mehulmittal/mehulmittal.github.io/raw/main/cv.pdf" target="_blank" class="btn btn-primary">
+                                <svg style="width:16px; margin-right:8px; fill:currentColor" viewBox="0 0 24 24">
+                                    <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                                </svg>
+                                Download CV
+                            </a>
+                        </div>
+                        <div class="hero-stats">
+                            <div class="stat">
+                                <span class="stat-number">4+</span>
+                                <span class="stat-label">Years Building ML Systems</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">€2M</span>
+                                <span class="stat-label">Business Impact Delivered</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-visual">
+                        <div class="visual-card">
+                            <div class="card-header">What I Do</div>
+                            <div class="card-content">
+                                <h3>Deep Learning • GenAI • MLOps</h3>
+                                <p>I build neural networks, implement GenAI solutions, and set up MLOps pipelines. I have worked with computer vision, NLP, reinforcement learning, and transfer learning. I focus on getting models into production and making sure they actually work at scale.</p>
+                                <div class="tech-tags">
+                                    <span class="tech-tag">PyTorch</span>
+                                    <span class="tech-tag">TensorFlow</span>
+                                    <span class="tech-tag">LLMs</span>
+                                    <span class="tech-tag">MLOps</span>
+                                    <span class="tech-tag">AWS</span>
+                                    <span class="tech-tag">Azure</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about-me" style="background: white; padding: 6rem 0;">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-label">A Bit About Me</div>
+                    <h2>Who I Am</h2>
+                </div>
+                <div style="max-width: 900px; margin: 0 auto;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
+                        <div>
+                            <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; font-weight: 700;">My Approach</h3>
+                            <p style="color: #555; line-height: 1.8; margin-bottom: 1.5rem;">
+                                I am someone who gets excited about solving hard problems with machine learning. I do not just train models, 
+                                I build complete systems that work in production. That means thinking about everything from data pipelines 
+                                and feature engineering to model monitoring and A/B testing.
+                            </p>
+                            <p style="color: #555; line-height: 1.8; margin-bottom: 1.5rem;">
+                                I have spent years working on neural architectures, optimizing hyperparameters, and debugging why models 
+                                fail in the real world. I know that getting a model to 95% accuracy is one thing, making it reliable 
+                                in production is another thing entirely.
+                            </p>
+                            <p style="color: #555; line-height: 1.8;">
+                                What I enjoy most is the moment when research becomes reality. When you see your model making predictions 
+                                on real data, helping real users, that is what makes all the hyperparameter tuning worth it.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; font-weight: 700;">What I Bring</h3>
+                            <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                                <div style="border-left: 4px solid var(--accent); padding-left: 1.5rem;">
+                                    <h4 style="font-weight: 700; margin-bottom: 0.5rem; color: var(--accent);">Deep Learning Expertise</h4>
+                                    <p style="color: #666; line-height: 1.6;">
+                                        I build CNNs, RNNs, Transformers, and Vision Transformers. I have worked on everything from 
+                                        image classification to time series forecasting to NLP tasks. I know PyTorch and TensorFlow inside out.
+                                    </p>
+                                </div>
+                                <div style="border-left: 4px solid var(--tech); padding-left: 1.5rem;">
+                                    <h4 style="font-weight: 700; margin-bottom: 0.5rem; color: var(--tech);">GenAI Implementation</h4>
+                                    <p style="color: #666; line-height: 1.6;">
+                                        I work with LLMs like GPT-4 and Claude. I do prompt engineering, fine tuning with LoRA and QLoRA, 
+                                        and build RAG systems. I know how to get these models to actually solve business problems.
+                                    </p>
+                                </div>
+                                <div style="border-left: 4px solid var(--accent); padding-left: 1.5rem;">
+                                    <h4 style="font-weight: 700; margin-bottom: 0.5rem; color: var(--accent);">Production MLOps</h4>
+                                    <p style="color: #666; line-height: 1.6;">
+                                        I set up complete MLOps pipelines with MLflow, build CI/CD for models, implement drift detection, 
+                                        and deploy on AWS and Azure. I make sure models do not break in production.
+                                    </p>
+                                </div>
+                                <div style="border-left: 4px solid var(--tech); padding-left: 1.5rem;">
+                                    <h4 style="font-weight: 700; margin-bottom: 0.5rem; color: var(--tech);">Team Collaboration</h4>
+                                    <p style="color: #666; line-height: 1.6;">
+                                        I have led ML teams, mentored junior engineers, and worked with cross functional teams. 
+                                        I can explain complex ML concepts to non technical stakeholders and I enjoy doing it.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 3rem; padding: 2rem; background: var(--secondary); border-left: 4px solid var(--accent);">
+                        <p style="font-size: 1.1rem; line-height: 1.8; color: #333; margin: 0;">
+                            <strong>Currently:</strong> I am wrapping up my Master's in AI at FAU and looking for my next challenge. 
+                            I want to work somewhere where I can build AI systems that actually matter, with a team that cares about 
+                            doing things right.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Stack Marquee -->
+        <section class="tech-marquee">
+            <div class="marquee-label">My Tech Stack</div>
+            <div class="marquee-container">
+                <div class="marquee-content">
+                    <div class="marquee-item">
+                        <div class="marquee-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                        </div>
+                        <span class="marquee-name">Python</span>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="marquee-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch">
+                        </div>
+                        <span class="marquee-name">PyTorch</span>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="marquee-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow">
+                        </div>
+                        <span class="marquee-name">TensorFlow</span>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="marquee-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" alt="Scikit-learn">
+                        </div>
+                        <span class="marquee-name">Scikit-learn</span>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="marquee-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy">
+                        </div>
+                        <span class="marquee-name">NumPy</span>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="marquee-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas">
+                        </div>
+                        <span class="marquee-name">Pandas</span>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="marquee-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS">
+                        </div>
+                        <span class="marquee-name">AWS</span>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="marquee-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure">
+                        </div>
+                        <span class="marquee-name">Azure</span>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="marquee-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
+                        </div>
+                        <span class="marquee-name">Docker</span>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="marquee-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes">
+                        </div>
+                        <span class="marquee-name">Kubernetes</span>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="marquee-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mlflow/mlflow-original.svg" alt="MLflow">
+                        </div>
+                        <span class="marquee-name">MLflow</span>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="marquee-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/databricks/databricks-original.svg" alt="Databricks">
+                        </div>
+                        <span class="marquee-name">Databricks</span>
+                    </div>
+                </div>
+                <!-- Duplicate for seamless loop -->
+                <div class="marquee-content" aria-hidden="true">
+                    <div class="marquee-item">
+                        <div class="marquee-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                        </div>
+                        <span class="marquee-name">Python</span>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="marquee-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch">
+                        </div>
+                        <span class="marquee-name">PyTorch</span>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="marquee-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow">
+                        </div>
+                        <span class="marquee-name">TensorFlow</span>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="marquee-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" alt="Scikit-learn">
+                        </div>
+                        <span class="marquee-name">Scikit-learn</span>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="marquee-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy">
+                        </div>
+                        <span class="marquee-name">NumPy</span>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="marquee-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas">
+                        </div>
+                        <span class="marquee-name">Pandas</span>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="marquee-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS">
+                        </div>
+                        <span class="marquee-name">AWS</span>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="marquee-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure">
+                        </div>
+                        <span class="marquee-name">Azure</span>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="marquee-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
+                        </div>
+                        <span class="marquee-name">Docker</span>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="marquee-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes">
+                        </div>
+                        <span class="marquee-name">Kubernetes</span>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="marquee-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mlflow/mlflow-original.svg" alt="MLflow">
+                        </div>
+                        <span class="marquee-name">MLflow</span>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="marquee-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/databricks/databricks-original.svg" alt="Databricks">
+                        </div>
+                        <span class="marquee-name">Databricks</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-label">Where I've Worked</div>
+                    <h2>Experience</h2>
+                </div>
+                <div class="experience-grid">
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="experience-title">
+                                <h3>ML Infrastructure Engineer</h3>
+                                <p class="company">Robert Bosch GmbH</p>
+                            </div>
+                            <div class="experience-date">Mar 2025 - Sep 2025</div>
+                        </div>
+                        <div class="experience-description">
+                            <ul>
+                                <li>Developed LLM solution using prompt engineering and fine tuning to standardize technical diagrams, reducing manual review time by 60%</li>
+                                <li>Built cloud ML infrastructure on AWS supporting distributed training and inference pipelines for computer vision and NLP models across global teams</li>
+                                <li>Set up MLOps automation with GitHub Actions and Docker for continuous training, model versioning, and A/B testing</li>
+                                <li>Optimized ML deployments on Lambda and EC2 through quantization and inference optimization, cutting costs by 25%</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="experience-title">
+                                <h3>AI Research Engineer</h3>
+                                <p class="company">Machine Learning Lab, FAU</p>
+                            </div>
+                            <div class="experience-date">Mar 2024 - Apr 2025</div>
+                        </div>
+                        <div class="experience-description">
+                            <ul>
+                                <li>Researched freeze of gait detection in Parkinson's patients, developing deep learning models using CNNs, RNNs, and Transformers</li>
+                                <li>Applied signal processing techniques like wavelet transforms and FFT with feature engineering for real time healthcare ML pipelines</li>
+                                <li>Developed transfer learning approaches combining self supervised learning and domain adaptation for cross subject generalization</li>
+                                <li>Co authored IEEE EMBS conference paper on motor activity perception in Parkinson's patients using wearable sensors</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="experience-title">
+                                <h3>Lead AI/ML Engineer</h3>
+                                <p class="company">Concentrix</p>
+                            </div>
+                            <div class="experience-date">Oct 2021 - Feb 2023</div>
+                        </div>
+                        <div class="experience-description">
+                            <ul>
+                                <li>Led development of production ML platform serving 200+ users with real time predictions using ensemble methods and neural networks</li>
+                                <li>Designed end to end ML pipelines with automated feature engineering, model training, and hyperparameter tuning</li>
+                                <li>Built time series forecasting and anomaly detection models delivering €2M ROI through optimization algorithms</li>
+                                <li>Set up model monitoring with drift detection, explainability tools like SHAP and LIME, and automated retraining pipelines</li>
+                                <li>Mentored junior ML engineers on deep learning fundamentals and neural network training best practices</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="experience-title">
+                                <h3>ML Engineering Intern</h3>
+                                <p class="company">Mirrag AI</p>
+                            </div>
+                            <div class="experience-date">Sep 2021 - Nov 2021</div>
+                        </div>
+                        <div class="experience-description">
+                            <ul>
+                                <li>Built MLOps foundation with experiment tracking using MLflow and Weights & Biases, model registry, and CI/CD pipelines</li>
+                                <li>Established coding standards and version control workflows for reproducible ML research with DVC and Docker</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-label">What I Have Built</div>
+                    <h2>Key Projects</h2>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Neural Transfer Learning for Cross Subject Generalization</h3>
+                            <p class="project-meta">Master's Thesis • May 2024 - Nov 2025</p>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">
+                                Built end to end deep learning pipeline processing 1M+ samples with automated data augmentation and quality validation. 
+                                Implemented neural architectures like EEGNet, EEGConformer, ATCNet, and Vision Transformers with custom attention mechanisms. 
+                                Applied domain adaptation techniques including adversarial training, contrastive learning, and meta learning for zero shot 
+                                generalization. Deployed MLOps infrastructure with MLflow and DVC for reproducible research.
+                            </p>
+                            <div class="tech-tags">
+                                <span class="tech-tag">PyTorch</span>
+                                <span class="tech-tag">Transformers</span>
+                                <span class="tech-tag">Domain Adaptation</span>
+                                <span class="tech-tag">MLflow</span>
+                                <span class="tech-tag">DVC</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Healthcare Analytics with Large Language Models</h3>
+                            <p class="project-meta">Academic Capstone • Oct 2024 - Apr 2025</p>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">
+                                Built GenAI pipeline integrating LLMs like GPT-4 and Claude with custom fine tuning for medical domain using prompt engineering 
+                                and few shot learning. Developed RAG architecture with semantic search using vector embeddings and databases like Pinecone and 
+                                ChromaDB. Implemented automated monitoring for LLM drift detection, hallucination metrics, and response quality evaluation. 
+                                Set up MLOps governance with MLflow 3.0 for experiment management and audit trails.
+                            </p>
+                            <div class="tech-tags">
+                                <span class="tech-tag">GPT-4</span>
+                                <span class="tech-tag">RAG</span>
+                                <span class="tech-tag">Vector DB</span>
+                                <span class="tech-tag">Fine tuning</span>
+                                <span class="tech-tag">MLflow</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>More on GitHub</h3>
+                            <p class="project-meta">Open Source & Personal Work</p>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">
+                                I have more projects on GitHub covering computer vision, NLP, reinforcement learning, and MLOps implementations. 
+                                All projects include detailed documentation and production ready code. Check out my GitHub to see what I have been 
+                                building lately.
+                            </p>
+                            <div style="margin-top: 1.5rem;">
+                                <a href="https://github.com/mehulmittal27" target="_blank" class="btn btn-primary" style="display: inline-block;">
+                                    View GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-label">What I Know</div>
+                    <h2>Technical Skills</h2>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3><span class="skill-icon">🧠</span> Deep Learning</h3>
+                        <div class="skill-list">
+                            <span class="skill-item">PyTorch</span>
+                            <span class="skill-item">TensorFlow</span>
+                            <span class="skill-item">Keras</span>
+                            <span class="skill-item">PyTorch Lightning</span>
+                            <span class="skill-item">CNNs</span>
+                            <span class="skill-item">RNNs/LSTMs</span>
+                            <span class="skill-item">Transformers</span>
+                            <span class="skill-item">Vision Transformers</span>
+                            <span class="skill-item">Attention Mechanisms</span>
+                            <span class="skill-item">ResNets</span>
+                            <span class="skill-item">EfficientNet</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3><span class="skill-icon">🤖</span> GenAI & LLMs</h3>
+                        <div class="skill-list">
+                            <span class="skill-item">GPT-4</span>
+                            <span class="skill-item">Claude API</span>
+                            <span class="skill-item">Llama</span>
+                            <span class="skill-item">LangChain</span>
+                            <span class="skill-item">LlamaIndex</span>
+                            <span class="skill-item">Hugging Face</span>
+                            <span class="skill-item">Fine tuning (LoRA/QLoRA)</span>
+                            <span class="skill-item">Prompt Engineering</span>
+                            <span class="skill-item">RAG</span>
+                            <span class="skill-item">Vector Embeddings</span>
+                            <span class="skill-item">Agent Frameworks</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3><span class="skill-icon">📊</span> ML & Data Science</h3>
+                        <div class="skill-list">
+                            <span class="skill-item">Scikit learn</span>
+                            <span class="skill-item">XGBoost</span>
+                            <span class="skill-item">LightGBM</span>
+                            <span class="skill-item">CatBoost</span>
+                            <span class="skill-item">Random Forests</span>
+                            <span class="skill-item">SVM</span>
+                            <span class="skill-item">Time Series Forecasting</span>
+                            <span class="skill-item">Anomaly Detection</span>
+                            <span class="skill-item">Feature Engineering</span>
+                            <span class="skill-item">Hyperparameter Tuning</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3><span class="skill-icon">⚙️</span> MLOps & Deployment</h3>
+                        <div class="skill-list">
+                            <span class="skill-item">MLflow</span>
+                            <span class="skill-item">Weights & Biases</span>
+                            <span class="skill-item">DVC</span>
+                            <span class="skill-item">Docker</span>
+                            <span class="skill-item">Kubernetes</span>
+                            <span class="skill-item">CI/CD</span>
+                            <span class="skill-item">GitHub Actions</span>
+                            <span class="skill-item">Model Monitoring</span>
+                            <span class="skill-item">Drift Detection</span>
+                            <span class="skill-item">FastAPI</span>
+                            <span class="skill-item">TorchServe</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3><span class="skill-icon">☁️</span> Cloud Platforms</h3>
+                        <div class="skill-list">
+                            <span class="skill-item">AWS SageMaker</span>
+                            <span class="skill-item">Azure ML</span>
+                            <span class="skill-item">Databricks</span>
+                            <span class="skill-item">Lambda</span>
+                            <span class="skill-item">EC2</span>
+                            <span class="skill-item">S3</span>
+                            <span class="skill-item">Google Cloud AI</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3><span class="skill-icon">🔧</span> Tools & Languages</h3>
+                        <div class="skill-list">
+                            <span class="skill-item">Python (Expert)</span>
+                            <span class="skill-item">NumPy</span>
+                            <span class="skill-item">Pandas</span>
+                            <span class="skill-item">Matplotlib</span>
+                            <span class="skill-item">Seaborn</span>
+                            <span class="skill-item">Git/GitHub</span>
+                            <span class="skill-item">REST APIs</span>
+                            <span class="skill-item">Pytest</span>
+                            <span class="skill-item">Jupyter</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3><span class="skill-icon">🎯</span> Specialized Areas</h3>
+                        <div class="skill-list">
+                            <span class="skill-item">Computer Vision</span>
+                            <span class="skill-item">NLP</span>
+                            <span class="skill-item">Transfer Learning</span>
+                            <span class="skill-item">Domain Adaptation</span>
+                            <span class="skill-item">Self Supervised Learning</span>
+                            <span class="skill-item">Reinforcement Learning</span>
+                            <span class="skill-item">Model Optimization</span>
+                            <span class="skill-item">Quantization</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3><span class="skill-icon">🌍</span> Languages</h3>
+                        <div class="skill-list">
+                            <span class="skill-item">English (Fluent)</span>
+                            <span class="skill-item">German (A2)</span>
+                            <span class="skill-item">Hindi (Native)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="container">
+                <div class="contact-content">
+                    <div class="section-label" style="color: var(--accent);">Let's Build Something</div>
+                    <h2>Get in Touch</h2>
+                    <p class="contact-description">
+                        I am looking for opportunities to build impactful AI systems. If you are working on interesting ML problems 
+                        and need someone who can take them from research to production, let's talk.
+                    </p>
+                    <div class="contact-links">
+                        <a href="mailto:mehulmittal1299@gmail.com" class="contact-link">Email Me</a>
+                        <a href="https://linkedin.com/in/mehulmittal27" class="contact-link" target="_blank">LinkedIn</a>
+                        <a href="https://github.com/mehulmittal27" class="contact-link" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <p class="copyright">© 2026 Mehul Mittal. Building intelligent systems that scale.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+
+        document.querySelectorAll('section').forEach(section => {
+            const header = section.querySelector('.section-header');
+            if (header && !header.classList.contains('scroll-reveal')) {
+                header.classList.add('scroll-reveal');
+                observer.observe(header);
+            }
+        });
+    </script>
+</body>
+</html>
